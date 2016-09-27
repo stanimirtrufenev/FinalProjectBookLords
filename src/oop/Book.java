@@ -8,7 +8,8 @@ public class Book {
 	private float rating;
 	private long numberOfRatings;
 	private long reviews;
-	private Rating ratings;
+	//LinkedHashSet
+	private Set<Review> review;
 	private int pages;
 	private String editionLanguage;
 	private URL url;
@@ -18,6 +19,6 @@ public class Book {
 	// country, year:
 	private String setting;
 	// LinkedHashSet to be in the order in which they came: 
-	private Set<Comment> comments;
+	private Set<Comment> questions;
 	
 }

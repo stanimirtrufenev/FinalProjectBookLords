@@ -1,9 +1,12 @@
 package oop;
+
 import java.net.URL;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+
+import exceptions.InvalidDataException;
 
 public class User {
 	private String name;
@@ -33,5 +36,19 @@ public class User {
 	//
 	private Set<Group> groups;
 	private Set<Discussion> discussions;
+
+	public User(String name, String email, String password) throws InvalidDataException {
+		isValidString(name);
+		isValidString(email);
+		isValidString(password);
+	}
+
+	public void isValidString(String string) throws InvalidDataException {
+		if (string != null && string.trim().length() > 0) {
+			this.name = string;
+		} else {
+			throw new InvalidDataException("Invalid information entered!");
+		}
+	}
 
 }
